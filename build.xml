@@ -28,14 +28,14 @@
 	         depends="prepare"
 	         description="Run unit tests with PHPUnit">
 	  <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
+	   <arg path="${basedir}/phpunit.xml"/>
+	  </exec>
 	  <exec dir="."
       command="${phpunit} --log-junit '${basedir}/build/unitreport.xml'
                        --coverage-html '${basedir}/build/coverage'
                        --coverage-clover '${basedir}/build/coverage/coverage.xml'
                        test/"
 		/>
-	   <arg path="${basedir}/phpunit.xml"/>
-	  </exec>
 
 	  <property name="phpunit.done" value="true"/>
 	</target>
