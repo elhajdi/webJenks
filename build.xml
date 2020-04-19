@@ -8,7 +8,8 @@
  <property name="phpdox"  value="${basedir}/build/tools/phpdox.phar"/>
  <property name="phploc"  value="${basedir}/build/tools/phploc.phar"/>
  <property name="phpmd"   value="${basedir}/build/tools/phpmd.phar"/>
- <property name="phpunit" value="${basedir}/build/tools/phpunit.phar"/> 
+ <!-- <property name="phpunit" value="${basedir}/build/tools/phpunit.phar"/>  -->
+ <property name="phpunit" value="${basedir}/vendor/bin/phpunit"/>
  <property name="path_composer" value="${basedir}/build/tools/composer.phar"/> 
 
     <target name="composer" description="Installing composer dependencies">
