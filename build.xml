@@ -29,9 +29,9 @@
 	         description="Run unit tests with PHPUnit">
 	  <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
 	  <exec dir="."
-      command="${phpunit} --log-junit 'reports/unitreport.xml'
-                       --coverage-html 'reports/coverage'
-                       --coverage-clover 'reports/coverage/coverage.xml'
+      command="${phpunit} --log-junit '${basedir}/build/unitreport.xml'
+                       --coverage-html '${basedir}/build/coverage'
+                       --coverage-clover '${basedir}/build/coverage/coverage.xml'
                        test/"
 		/>
 	   <arg path="${basedir}/phpunit.xml"/>
