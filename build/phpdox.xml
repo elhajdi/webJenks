@@ -1,8 +1,9 @@
 <phpdox xmlns="http://xml.phpdox.net/config">
-    <project name="Web-test-jenks" source="${basedir}/.." workdir="${basedir}/api/xml" >
+    <project name="Web-test-jenks" source="${basedir}/../src" workdir="${basedir}/api/xml" >
         <collector publiconly="false">
             <include mask="*.php">
             </include>
+            <exclude name="**/vendor/*" />
         </collector>
         <generator output="${basedir}/api">
             <build enabled="true" engine="html" output="html">
