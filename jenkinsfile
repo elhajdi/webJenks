@@ -1,0 +1,30 @@
+pipeline {
+	agent any
+	stages {
+		stage ('Initialize') {
+			steps {
+				echo "Jenknins pipeline stpes initializer "
+				
+			}
+		}
+
+		stage('Build') {
+			steps {
+				echo 'Building the project'
+				sh 'ant clean composer phpunit'
+			}
+			post {
+				success {
+					sh './vendor/bin/phpunit '
+				}
+			}
+		}
+
+		stage('Deploy') {
+			steps {
+				echo 'deploying'
+				sh 'dandelion deploy --config=/Users/elhajdi/plateform/myprojects/testLaravelJenkins/testW/dandelion.yml'
+			}
+		}
+	}
+}
