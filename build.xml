@@ -11,13 +11,18 @@
  <!-- <property name="phpunit" value="${basedir}/build/tools/phpunit.phar"/>  -->
  <property name="phpunit" value="${basedir}/vendor/bin/phpunit"/>
  <property name="path_composer" value="${basedir}/build/tools/composer.phar"/> 
+	
+	
+ <target name="full-build"
+         depends="prepare,composer,lint, phpunit, phpdox"
+         description="Performs runs the tests, and generates project documentation"/>
 
     <target name="composer" description="Installing composer dependencies">
 	  <exec executable="${path_composer}" failonerror="true">
 	    <arg value="install" />
 	  </exec>
 	</target>
-
+	
 	<target name="phpunit"
 	         unless="phpunit.done"
 	         depends="prepare"
@@ -53,6 +58,16 @@
 
 	    <property name="lint.done" value="true"/>
 	</target>
+
+	 <target name="phpdox"
+	         unless="phpdox.done"
+	         depends="phploc-ci,phpcs-ci,phpmd-ci"
+	         description="Generate project documentation using phpDox">
+	  <exec executable="${phpdox}" dir="${basedir}/build" taskname="phpdox"/>
+
+	  <property name="phpdox.done" value="true"/>
+	 </target>
+
 
 	<target name="clean"
 	         unless="clean.done"
