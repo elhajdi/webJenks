@@ -7,8 +7,7 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="false"
-         codecoverage="true">
+         stopOnFailure="false">
     <testsuites>
 
         <testsuite name="Unit">
