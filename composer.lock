@@ -23,7 +23,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1"
+                "php": "^7.0"
             },
             "require-dev": {
                 "doctrine/coding-standard": "^6.0",
@@ -79,7 +79,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1"
+                "php": "^7.0"
             },
             "replace": {
                 "myclabs/deep-copy": "self.version"
