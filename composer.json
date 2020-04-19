@@ -1,15 +1,15 @@
 {
+	"config": {
+	  "platform": {
+	    "php": "7.0.0"
+	  }
+	},
     "autoload": {
         "classmap": [
             "src/"
         ]
     },
-    "require": {
-        "php": "^7.0"
-    },
     "require-dev": {
-    	"php": "^7.0",
-        "phpunit/phpunit": "^5.7"
+        "phpunit/phpunit": "^6"
     }
-
 }
